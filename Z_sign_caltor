@@ -1,40 +1,53 @@
-# Astrological Sign Calculator
 
-# Function to determine the astrological sign based on the date of birth
-def calculate_astrological_sign(day, month):
-    if (month == 1 and day >= 20) or (month == 2 and day <= 18):
-        return "Aquarius"
-    elif (month == 2 and day >= 19) or (month == 3 and day <= 20):
-        return "Pisces"
-    elif (month == 3 and day >= 21) or (month == 4 and day <= 19):
-        return "Aries"
-    elif (month == 4 and day >= 20) or (month == 5 and day <= 20):
-        return "Taurus"
-    elif (month == 5 and day >= 21) or (month == 6 and day <= 20):
-        return "Gemini"
-    elif (month == 6 and day >= 21) or (month == 7 and day <= 22):
-        return "Cancer"
-    elif (month == 7 and day >= 23) or (month == 8 and day <= 22):
-        return "Leo"
-    elif (month == 8 and day >= 23) or (month == 9 and day <= 22):
-        return "Virgo"
-    elif (month == 9 and day >= 23) or (month == 10 and day <= 22):
-        return "Libra"
-    elif (month == 10 and day >= 23) or (month == 11 and day <= 21):
-        return "Scorpio"
-    elif (month == 11 and day >= 22) or (month == 12 and day <= 21):
-        return "Sagittarius"
-    elif (month == 12 and day >= 22) or (month == 1 and day <= 19):
-        return "Capricorn"
-    else:
-        return "Invalid date"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Astrological Sign Calculator</title>
+    <script>
+        function calculateAstrologicalSign() {
+            var day = parseInt(document.getElementById("day").value);
+            var month = parseInt(document.getElementById("month").value);
+            var result = document.getElementById("result");
 
-# Get user input for date of birth
-day = int(input("Enter the day of your birth: "))
-month = int(input("Enter the month of your birth (as a number): "))
-
-# Calculate astrological sign
-sign = calculate_astrological_sign(day, month)
-
-# Display the result
-print("Your astrological sign is:", sign)
+            if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+                result.innerHTML = "Aquarius";
+            } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+                result.innerHTML = "Pisces";
+            } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+                result.innerHTML = "Aries";
+            } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+                result.innerHTML = "Taurus";
+            } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+                result.innerHTML = "Gemini";
+            } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+                result.innerHTML = "Cancer";
+            } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+                result.innerHTML = "Leo";
+            } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+                result.innerHTML = "Virgo";
+            } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+                result.innerHTML = "Libra";
+            } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+                result.innerHTML = "Scorpio";
+            } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+                result.innerHTML = "Sagittarius";
+            } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+                result.innerHTML = "Capricorn";
+            } else {
+                result.innerHTML = "Invalid date";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Astrological Sign Calculator</h1>
+    <label for="day">Enter the day of your birth:</label>
+    <input type="number" id="day" min="1" max="31">
+    <br>
+    <label for="month">Enter the month of your birth (as a number):</label>
+    <input type="number" id="month" min="1" max="12">
+    <br>
+    <button onclick="calculateAstrologicalSign()">Calculate</button>
+    <p id="result"></p>
+</body>
+</html>
